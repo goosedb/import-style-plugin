@@ -7,6 +7,7 @@ author:             goosedb
 maintainer:         goosedb@yandex.ru
 build-type:         Simple
 extra-doc-files:    CHANGELOG.md
+homepage:           https://github.com/goosedb/import-style-plugin
 
 category: Development
 synopsis: Helps maintain consistency of imports
