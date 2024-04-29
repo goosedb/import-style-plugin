@@ -7,6 +7,10 @@ author:             goosedb
 maintainer:         goosedb@yandex.ru
 build-type:         Simple
 extra-doc-files:    CHANGELOG.md
+
+category: Development
+synopsis: Helps maintain consistency of imports
+
 common warnings
     ghc-options: -Wall
 
@@ -17,7 +21,7 @@ library
                     , ImportStylePlugin.Derived
                     , ImportStylePlugin.Config
                     , ImportStylePlugin.Compat
-    build-depends:    base
+    build-depends:    base >=4.11 && <4.20
                     , ghc >= 9.2 && < 9.10
                     , containers
                     , yaml
