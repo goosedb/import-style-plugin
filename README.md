@@ -111,3 +111,6 @@ It can be useful if you have a lot of projects with one style. So you haven't to
 
         ghc-options: -fplugin YourPlugin
       ```
+## Tips
+### Custom warning
+Since ghc-9.8 the plugin introduces custom warning `x-import-style`. So if you set `-Werror` but still want to style warnings be warnings use ghc option `-Wwarn=x-import-style`. You also can disable at all warnings with `-Wno-x-import-style`

@@ -3,6 +3,7 @@
 {-# LANGUAGE CPP #-}
 {-# LANGUAGE BlockArguments #-}
 {-# LANGUAGE RecordWildCards #-}
+{-# LANGUAGE OverloadedStrings #-}
 module ImportStylePlugin.Compat where
 
 #if __GLASGOW_HASKELL__ >= 908 && __GLASGOW_HASKELL__ < 910
@@ -11,6 +12,7 @@ import qualified GHC.Utils.Outputable as Ghc
 import qualified GHC.Types.Error as Ghc
 import qualified GHC.Tc.Utils.Monad as Ghc
 import qualified GHC.Tc.Errors.Types as Ghc
+import qualified GHC.Unit.Module.Warnings as Ghc
 #endif
 
 #if __GLASGOW_HASKELL__ >= 906 && __GLASGOW_HASKELL__ < 908
@@ -100,7 +102,7 @@ report severity msg loc =
       { Ghc.diagMessage = Ghc.mkSimpleDecorated msg
       , Ghc.diagReason = case severity of
           Error -> Ghc.ErrorWithoutFlag
-          Warning -> Ghc.WarningWithoutFlag
+          Warning -> Ghc.WarningWithCategory (Ghc.WarningCategory "x-import-style")
       , Ghc.diagHints = []
       }
 #endif
@@ -115,7 +117,7 @@ report severity msg loc =
       { Ghc.diagMessage = Ghc.mkSimpleDecorated msg
       , Ghc.diagReason = case severity of
           Error -> Ghc.ErrorWithoutFlag
-          Warning -> Ghc.WarningWithoutFlag
+          Warning -> Ghc.WarningWithoutFlag 
       , Ghc.diagHints = []
       }
 #endif
