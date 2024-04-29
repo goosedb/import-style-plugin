@@ -1,0 +1,26 @@
+cabal-version:      3.0
+name:               import-style-plugin
+version:            0.1.0.0
+license:            MIT
+license-file:       LICENSE
+author:             goosedb
+maintainer:         goosedb@yandex.ru
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  ImportStylePlugin
+                    , ImportStylePlugin.Yaml
+                    , ImportStylePlugin.Derived
+                    , ImportStylePlugin.Config
+                    , ImportStylePlugin.Compat
+    build-depends:    base
+                    , ghc >= 9.2 && < 9.10
+                    , containers
+                    , yaml
+                    , aeson
+    hs-source-dirs:   src
+    default-language: Haskell2010
