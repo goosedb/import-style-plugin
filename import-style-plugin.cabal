@@ -6,7 +6,7 @@ license-file:       LICENSE
 author:             goosedb
 maintainer:         goosedb@yandex.ru
 build-type:         Simple
-extra-doc-files:    CHANGELOG.md
+extra-doc-files:    CHANGELOG.md, README.md
 homepage:           https://github.com/goosedb/import-style-plugin
 
 category: Development
