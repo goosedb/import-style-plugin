@@ -22,12 +22,12 @@ Tested with:
 ```yaml
 qualificationStyle: Post | Pre | null
 
-bannedModules:
+bannedModules: # can be null
   Module.Name:
     severity: Error | Warning
     why: string with ban reason
 
-importRules:
+importRules: # can be null
   DataModuleName:
     severity: Error | Warning
     rules:
@@ -40,6 +40,7 @@ importRules:
           # or just list, so alias can be omitted
           - Module.Alias
           - Alias
+          # or null
         importedNames:
           # Either whitelist, so import should be 
           # accompanied with explicit import list 
@@ -54,6 +55,7 @@ importRules:
             - pattern (:|>) 
             - type (+)
             - foo
+          # or null
 ```
 #### Here is example:
 ```yaml
